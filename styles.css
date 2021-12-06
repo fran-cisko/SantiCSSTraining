@@ -89,3 +89,17 @@ p{
 .line:nth-child(2) .cards .card:nth-child(3){
     border-radius: 30px;
 }
+
+/*Extra responive*/
+
+/*===== Smartphone===== sm de 0 610 */
+@media screen and (max-width:610px){
+  
+    .cards{
+        flex-wrap: wrap;
+        justify-content:space-around;
+    }
+    .card{
+        margin:5px;
+    }
+}
