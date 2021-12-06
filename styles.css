@@ -1,0 +1,91 @@
+/*
+
+1.Elementos con una etiqueta
+2.Elementos con una clase
+3.Elementos adentro de elementos
+4.Elementos con un atributo con un valor
+5.Elementos Elementos inmediatamente adentro de otros elementos
+6.Elementos contiguos a otros elementos
+La idea es que se tiene que ver como en la captura agregando unas 10 propiedades de css (algunas en
+ los selectores que ya existen y para otras tenés que crear selectores vos)
+Sólo tenés que tocar el css. No el html
+*/
+
+body{
+    margin: 0px;
+    background-color: #aab;
+}
+h4, h5{
+    margin: 0;
+}
+.line{
+    padding: 12px;
+    border-radius: 16px;
+}
+
+
+.card{
+    border-radius: 8px;
+    background-color: #333;
+    margin-left: 10px;
+    padding: 2px;
+    /*max-width:160px;*/
+    width: clamp(100px,25%,25vw);/* el 1er valor hace referencia a la mínima medida para que se vea bien, el 2do a la deseable, y el 3ro al máximo. */
+    padding: 8px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,.6);/*shadow*/
+    
+  
+ 
+}
+.card > div p{
+    padding: 4px;
+    font-size: 12px;
+}
+
+.card:active{
+    box-shadow: none;
+    transform: translate(5px, 5px);
+}
+img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0px;
+}
+p{
+    margin: 0px;
+}
+
+/*======================== CSS de tu dicípulo ==========================*/
+.cards{
+    display:flex; /*cards inline*/
+    border-radius: 10px;
+ 
+}
+
+/*=== background color del div que contiene las cards===*/
+.line:first-child{
+    background: #fff;
+}
+.line:nth-child(2){
+    background:rgba(224, 182, 224, 0.897);
+}
+
+.line:last-child{
+    background: rgb(253, 219, 243);
+}
+/*=== las cards de la 1er linea ===*/
+.line:nth-child(2n+1) .cards .card:nth-child(2){/*2n+1 es como odd pero me gustó más*/
+    background: #fff;
+    color:black;
+}
+/*=== las cards de la 2da linea ===*/
+.line:nth-child(2) .cards .card{
+    background: #fff;
+    color:#000;
+}
+.line:nth-child(2) .cards .card:nth-child(3){
+    border-radius: 30px;
+}
